@@ -1,0 +1,56 @@
+[
+  {
+    "key": "rcc_concrete",
+    "display_name": "Reinforced Cement Concrete (RCC) Slab",
+    "value": 0.85,
+    "range": "0.80 - 0.90",
+    "source": "CGWB Master Plan (2005), Table 3.2; IS 15797:2008",
+    "description": "Flat or gently pitched RCC rooftop. Standard for modern residential and institutional buildings.",
+    "confidence": "HIGH"
+  },
+  {
+    "key": "corrugated_metal",
+    "display_name": "Corrugated Metal Sheet (CGI / Galvalume)",
+    "value": 0.90,
+    "range": "0.85 - 0.95",
+    "source": "IS 15797:2008; Ministry of Jal Shakti Guidelines",
+    "description": "Smooth corrugated galvanized iron or aluminum zinc coated sheet roofing with very high runoff yield.",
+    "confidence": "HIGH"
+  },
+  {
+    "key": "clay_tile",
+    "display_name": "Clay / Country / Mangalore Tiles",
+    "value": 0.80,
+    "range": "0.75 - 0.85",
+    "source": "CGWB (2007); Ministry of Jal Shakti Guidelines",
+    "description": "Sloped roof with clay/terracotta or concrete tiles. Minor absorption in porous tile bodies and joints.",
+    "confidence": "MEDIUM"
+  },
+  {
+    "key": "asbestos_cement",
+    "display_name": "Asbestos Cement Corrugated Sheet (AC Sheet)",
+    "value": 0.75,
+    "range": "0.70 - 0.80",
+    "source": "CGWB Master Plan (2005)",
+    "description": "Asbestos cement sheeting. Suitable for artificial recharge; potable use discouraged due to fiber safety.",
+    "confidence": "MEDIUM"
+  },
+  {
+    "key": "thatch_grass",
+    "display_name": "Thatched / Grass Roof (Traditional)",
+    "value": 0.40,
+    "range": "0.30 - 0.50",
+    "source": "ASSUMPTION — REQUIRES FIELD VALIDATION",
+    "description": "Organic thatched roof with substantial rainwater absorption and organic particulate runoff.",
+    "confidence": "LOW"
+  },
+  {
+    "key": "green_roof",
+    "display_name": "Vegetated / Green Roof",
+    "value": 0.30,
+    "range": "0.15 - 0.50",
+    "source": "ASSUMPTION — REQUIRES FIELD VALIDATION",
+    "description": "Engineered growing media with sedum/plants. High initial retention and evapotranspiration.",
+    "confidence": "LOW"
+  }
+]

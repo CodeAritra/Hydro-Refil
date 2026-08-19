@@ -1,0 +1,227 @@
+{
+  "_metadata": {
+    "document": "RTRWH Platform — Engineering Assumptions Registry",
+    "version": "1.0",
+    "created": "2026-08-19",
+    "status": "DRAFT — Requires domain expert validation before field deployment",
+    "review_required": true
+  },
+  "runoff_coefficients": {
+    "_description": "Runoff coefficient (C) for different roof surface types. Represents the fraction of rainfall that becomes runoff.",
+    "_source": "IS 15797:2008 (Rainwater Harvesting, BIS), CGWB Manual on Artificial Recharge (2007), First Flush Diverter Standards",
+    "_note": "ASSUMPTION — Values are representative ranges. Field verification recommended for precise sizing.",
+    "rcc_concrete": {
+      "value": 0.85,
+      "range": "0.80 - 0.90",
+      "unit": "dimensionless",
+      "source": "CGWB Master Plan for Artificial Recharge to Groundwater in India (2005), Table 3.2",
+      "description": "Reinforced Cement Concrete (RCC) flat roof",
+      "applicability": "Well-maintained RCC rooftop with no significant ponding or moss growth",
+      "confidence": "HIGH"
+    },
+    "corrugated_metal": {
+      "value": 0.90,
+      "range": "0.85 - 0.95",
+      "unit": "dimensionless",
+      "source": "IS 15797:2008, Central Ground Water Board documents",
+      "description": "Corrugated Galvanized Iron (CGI) / Galvalume sheet roofing",
+      "applicability": "Good condition metal sheets with proper slope",
+      "confidence": "HIGH"
+    },
+    "clay_tile": {
+      "value": 0.80,
+      "range": "0.75 - 0.85",
+      "unit": "dimensionless",
+      "source": "CGWB (2007), Ministry of Jal Shakti guidelines",
+      "description": "Clay or country tile roofing",
+      "applicability": "Well-maintained clay tile roof; lower values for older/mossy tiles",
+      "confidence": "MEDIUM"
+    },
+    "asbestos_cement": {
+      "value": 0.75,
+      "range": "0.70 - 0.80",
+      "unit": "dimensionless",
+      "source": "CGWB Master Plan (2005)",
+      "description": "Asbestos cement corrugated sheet roofing",
+      "applicability": "Standard asbestos cement sheets; note health considerations for potable use",
+      "confidence": "MEDIUM"
+    },
+    "thatch_grass": {
+      "value": 0.40,
+      "range": "0.30 - 0.50",
+      "unit": "dimensionless",
+      "source": "ASSUMPTION — REQUIRES FIELD VALIDATION",
+      "description": "Thatched or grass roof",
+      "applicability": "Traditional rural construction",
+      "confidence": "LOW"
+    },
+    "green_roof": {
+      "value": 0.30,
+      "range": "0.15 - 0.50",
+      "unit": "dimensionless",
+      "source": "ASSUMPTION — REQUIRES FIELD VALIDATION",
+      "description": "Vegetated / green roof",
+      "applicability": "Well-established vegetated roof system; highly variable",
+      "confidence": "LOW"
+    }
+  },
+  "system_efficiency": {
+    "_description": "Overall collection system efficiency accounting for first-flush losses, pipe losses, evaporation, and minor spillage.",
+    "default_value": 0.85,
+    "unit": "dimensionless",
+    "source": "CGWB (2007), typical recommended practice for Indian conditions",
+    "description": "System collection efficiency for a properly designed RTRWH system including first-flush diverter, filter, and storage",
+    "note": "ASSUMPTION — Varies significantly with maintenance quality. Range: 0.70 to 0.95",
+    "confidence": "MEDIUM"
+  },
+  "first_flush_volume": {
+    "_description": "Volume of initial runoff to be diverted as first-flush (contains maximum contamination from roof surface).",
+    "default_value_mm": 2.0,
+    "unit": "mm of rainfall per unit roof area",
+    "source": "IS 15797:2008 Clause 6; Ministry of Jal Shakti Jal Shakti Abhiyan guidelines",
+    "description": "Recommended first-flush diverter volume: 2 mm equivalent of roof area per event",
+    "example": "For 100 m² roof: 2 mm × 100 m² = 200 litres diverted per storm event",
+    "note": "ASSUMPTION — May require adjustment based on local air quality and roof condition",
+    "confidence": "MEDIUM"
+  },
+  "recharge_structure_freeboard": {
+    "value_m": 0.3,
+    "unit": "metres",
+    "source": "General engineering practice for open-top recharge structures",
+    "description": "Minimum freeboard to be maintained above maximum water level in recharge pit/trench",
+    "confidence": "MEDIUM"
+  },
+  "water_demand_per_capita": {
+    "_description": "Per-capita daily water demand for different usage categories",
+    "domestic_urban": {
+      "value": 135,
+      "unit": "litres/person/day",
+      "source": "CPHEEO Manual on Water Supply and Treatment (2000), IS 1172:1993",
+      "description": "Urban domestic water supply standard",
+      "confidence": "HIGH"
+    },
+    "domestic_rural": {
+      "value": 70,
+      "unit": "litres/person/day",
+      "source": "Jal Jeevan Mission guidelines (2019), CPHEEO",
+      "description": "Rural domestic water supply standard",
+      "confidence": "HIGH"
+    },
+    "hostel": {
+      "value": 135,
+      "unit": "litres/person/day",
+      "source": "IS 1172:1993",
+      "description": "Hostel/institutional residential facility",
+      "confidence": "HIGH"
+    },
+    "office": {
+      "value": 45,
+      "unit": "litres/person/day",
+      "source": "IS 1172:1993",
+      "description": "Office building (working hours only)",
+      "confidence": "HIGH"
+    },
+    "school": {
+      "value": 45,
+      "unit": "litres/person/day",
+      "source": "IS 1172:1993",
+      "description": "School/educational institution",
+      "confidence": "HIGH"
+    }
+  },
+  "soil_infiltration_rates": {
+    "_description": "Indicative infiltration rates for different soil types. FIELD TESTING REQUIRED for design.",
+    "_source": "CGWB Manual on Artificial Recharge (2007), Table 4.1",
+    "_warning": "ASSUMPTION — These are representative values only. Percolation/infiltration test required for actual design.",
+    "gravel_coarse_sand": {
+      "value_mm_hr": 50,
+      "range": "30 - 100",
+      "unit": "mm/hr",
+      "description": "Gravel and coarse sand — very high infiltration",
+      "confidence": "LOW — field test required"
+    },
+    "fine_sand": {
+      "value_mm_hr": 25,
+      "range": "10 - 50",
+      "unit": "mm/hr",
+      "description": "Fine to medium sand — high infiltration",
+      "confidence": "LOW — field test required"
+    },
+    "sandy_loam": {
+      "value_mm_hr": 12,
+      "range": "5 - 20",
+      "unit": "mm/hr",
+      "description": "Sandy loam soil — moderate infiltration",
+      "confidence": "LOW — field test required"
+    },
+    "loam": {
+      "value_mm_hr": 7,
+      "range": "3 - 12",
+      "unit": "mm/hr",
+      "description": "Loam soil — moderate infiltration",
+      "confidence": "LOW — field test required"
+    },
+    "clay_loam": {
+      "value_mm_hr": 3,
+      "range": "1 - 6",
+      "unit": "mm/hr",
+      "description": "Clay loam — low infiltration",
+      "confidence": "LOW — field test required"
+    },
+    "clay": {
+      "value_mm_hr": 1,
+      "range": "0.5 - 3",
+      "unit": "mm/hr",
+      "description": "Clay soil — very low infiltration",
+      "confidence": "LOW — field test required"
+    },
+    "black_cotton_soil": {
+      "value_mm_hr": 0.5,
+      "range": "0.1 - 2",
+      "unit": "mm/hr",
+      "description": "Expansive black cotton soil (Vertisol) — very low, problematic",
+      "confidence": "LOW — field test required"
+    },
+    "unknown": {
+      "value_mm_hr": 5,
+      "range": "unknown",
+      "unit": "mm/hr",
+      "description": "Unknown soil type — conservative assumption",
+      "note": "ASSUMPTION — REQUIRES FIELD/DOMAIN VALIDATION",
+      "confidence": "VERY LOW"
+    }
+  },
+  "structure_sizing": {
+    "recharge_pit": {
+      "max_depth_m": 3.0,
+      "min_width_m": 1.0,
+      "min_length_m": 1.0,
+      "max_width_m": 6.0,
+      "gravel_filter_thickness_m": 0.5,
+      "source": "CGWB (2007) recommended practice",
+      "note": "Depth limited to 3m for safety and construction practicality"
+    },
+    "recharge_trench": {
+      "typical_depth_m": 1.5,
+      "typical_width_m": 1.0,
+      "max_depth_m": 2.0,
+      "gravel_fill_fraction": 0.4,
+      "source": "CGWB (2007)",
+      "note": "Gravel fill reduces effective storage volume by fill fraction"
+    },
+    "storage_tank": {
+      "freeboard_fraction": 0.1,
+      "max_depth_m": 3.0,
+      "source": "General civil engineering practice",
+      "note": "10% freeboard allowance above calculated storage volume"
+    },
+    "recharge_shaft": {
+      "typical_diameter_m": 0.5,
+      "max_depth_m": 15.0,
+      "min_groundwater_depth_m": 5.0,
+      "source": "CGWB (2007) Appendix B",
+      "note": "Requires borehole drilling; depth depends on confining layers"
+    }
+  },
+  "disclaimer": "All values in this configuration file are engineering assumptions based on standard references. They are intended for PRELIMINARY ASSESSMENT ONLY. Final design dimensions must be verified by a qualified engineer based on site-specific field investigations including: soil permeability testing, groundwater depth measurement, topographic survey, and structural assessment. This system does not replace professional engineering judgment."
+}

@@ -1,0 +1,35 @@
+# RTRWH Platform — Backend Requirements
+# Generated: 2026-08-19
+# Python: 3.12+
+
+# Web Framework
+fastapi==0.115.0
+uvicorn[standard]==0.32.0
+
+# Database (async SQLite for dev, asyncpg for PostgreSQL in prod)
+sqlalchemy[asyncio]==2.0.36
+aiosqlite==0.20.0
+
+# Data Validation
+pydantic==2.10.0
+pydantic-settings==2.6.0
+
+# HTTP / CORS
+python-multipart==0.0.12
+
+# Geometry (client-side area via turf.js; server-side shapely for validation)
+shapely==2.0.6
+
+# Report generation
+reportlab==4.2.5
+
+# Testing
+pytest==8.3.4
+pytest-asyncio==0.24.0
+httpx==0.28.0
+
+# Development
+python-dotenv==1.0.1
+
+# Type stubs
+types-python-dateutil==2.9.0.20241206

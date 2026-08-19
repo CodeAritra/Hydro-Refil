@@ -1,0 +1,74 @@
+[
+  {
+    "key": "gravel_coarse_sand",
+    "display_name": "Gravel / Coarse Sand",
+    "infiltration_rate_mm_hr": 50.0,
+    "range": "30 - 100 mm/hr",
+    "source": "CGWB Manual on Artificial Recharge (2007), Table 4.1",
+    "description": "Very highly permeable granular strata. Rapid percolation and minimal surface ponding risk.",
+    "confidence": "LOW — Field Test Required"
+  },
+  {
+    "key": "fine_sand",
+    "display_name": "Fine to Medium Sand",
+    "infiltration_rate_mm_hr": 25.0,
+    "range": "10 - 50 mm/hr",
+    "source": "CGWB Manual on Artificial Recharge (2007)",
+    "description": "High permeability sandy subsoil. Ideal for standard gravel-filled recharge pits and trenches.",
+    "confidence": "LOW — Field Test Required"
+  },
+  {
+    "key": "sandy_loam",
+    "display_name": "Sandy Loam Soil",
+    "infiltration_rate_mm_hr": 12.0,
+    "range": "5 - 20 mm/hr",
+    "source": "CGWB Manual on Artificial Recharge (2007)",
+    "description": "Moderate permeability. Well-suited for recharge trenches and medium-sized recharge pits.",
+    "confidence": "LOW — Field Test Required"
+  },
+  {
+    "key": "loam",
+    "display_name": "Loam / Agricultural Soil",
+    "infiltration_rate_mm_hr": 7.0,
+    "range": "3 - 12 mm/hr",
+    "source": "CGWB Manual on Artificial Recharge (2007)",
+    "description": "Balanced soil with moderate drainage. May require larger trench surface area.",
+    "confidence": "LOW — Field Test Required"
+  },
+  {
+    "key": "clay_loam",
+    "display_name": "Clay Loam Soil",
+    "infiltration_rate_mm_hr": 3.0,
+    "range": "1 - 6 mm/hr",
+    "source": "CGWB Manual on Artificial Recharge (2007)",
+    "description": "Low permeability. Recharge pits may drain slowly. Shafts or trenches recommended.",
+    "confidence": "LOW — Field Test Required"
+  },
+  {
+    "key": "clay",
+    "display_name": "Dense Clay Layer",
+    "infiltration_rate_mm_hr": 1.0,
+    "range": "0.5 - 3 mm/hr",
+    "source": "CGWB Manual on Artificial Recharge (2007)",
+    "description": "Very low permeability. Surface recharge pits not recommended. Recharge shafts or storage tanks required.",
+    "confidence": "LOW — Field Test Required"
+  },
+  {
+    "key": "black_cotton",
+    "display_name": "Black Cotton Soil (Expansive Vertisol)",
+    "infiltration_rate_mm_hr": 0.5,
+    "range": "0.1 - 2 mm/hr",
+    "source": "CGWB Manual on Artificial Recharge (2007)",
+    "description": "Expansive soil prone to severe swelling and cracking. Surface storage tanks preferred over in-ground pits.",
+    "confidence": "LOW — Field Test Required"
+  },
+  {
+    "key": "unknown",
+    "display_name": "Unknown / Untested Soil Profile",
+    "infiltration_rate_mm_hr": 5.0,
+    "range": "Assumed default",
+    "source": "ASSUMPTION — REQUIRES FIELD VALIDATION",
+    "description": "Conservative default assumption when site-specific geotechnical testing is unavailable.",
+    "confidence": "VERY LOW"
+  }
+]
