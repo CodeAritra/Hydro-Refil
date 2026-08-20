@@ -7,16 +7,21 @@ Defaults to SQLite with aiosqlite for zero-config portable deployment.
 
 import os
 import urllib.parse
+from dotenv import load_dotenv, find_dotenv
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 from sqlalchemy.orm import declarative_base
 
-# Default to local SQLite database file in the backend directory
+# Automatically find and load .env from current directory or project root
+load_dotenv(find_dotenv())
+
+# Read database URL from .env
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./rtrwh_platform.db")
 
 connect_args = {}
 
 if "sqlite" in DATABASE_URL:
     connect_args = {"check_same_thread": False}
+    print("[DB] Using local SQLite database.")
 else:
     # Convert standard postgresql:// to postgresql+asyncpg:// for SQLAlchemy async
     if DATABASE_URL.startswith("postgres://"):
@@ -28,13 +33,11 @@ else:
     parsed = urllib.parse.urlparse(DATABASE_URL)
     query_params = urllib.parse.parse_qs(parsed.query)
 
-    has_ssl = False
+    has_ssl = True
     if "sslmode" in query_params:
-        has_ssl = query_params["sslmode"][0] in ("require", "verify-ca", "verify-full", "prefer")
+        has_ssl = query_params["sslmode"][0] not in ("disable", "false", "0")
     elif "ssl" in query_params:
-        has_ssl = query_params["ssl"][0] in ("require", "true", "True", "1")
-    elif "neon.tech" in DATABASE_URL or "render.com" in DATABASE_URL:
-        has_ssl = True
+        has_ssl = query_params["ssl"][0] not in ("disable", "false", "0")
 
     # Rebuild clean URL without query string to avoid keyword conflicts with asyncpg
     DATABASE_URL = urllib.parse.urlunparse((
@@ -47,12 +50,20 @@ else:
     ))
 
     if has_ssl:
-        connect_args = {"ssl": "require"}
+        connect_args["ssl"] = "require"
+    # Essential for Neon DB / PgBouncer speed & stability
+    connect_args["statement_cache_size"] = 0
+    connect_args["command_timeout"] = 15
+    print("[DB] Successfully configured for Neon Cloud PostgreSQL.")
 
 engine = create_async_engine(
     DATABASE_URL,
     echo=os.getenv("LOG_SQL", "False").lower() == "true",
     future=True,
+    pool_pre_ping=True,
+    pool_size=5,
+    max_overflow=10,
+    pool_recycle=300,
     connect_args=connect_args,
 )
 
