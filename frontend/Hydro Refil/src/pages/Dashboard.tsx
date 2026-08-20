@@ -42,9 +42,9 @@ export const Dashboard: React.FC = () => {
   const handleLaunchDemoScenario = async () => {
     try {
       const demoPayload = {
-        site_name: 'SIH Demo — National Institute of Hydrology Campus',
+        site_name: 'Sample for Presentation — National Institute of Hydrology Campus',
         assessor_name: 'Dr. S. K. Verma (Senior Hydrologist)',
-        organization: 'Smart India Hackathon Technical Committee',
+        organization: 'Technical Advisory Committee',
         remarks: 'Institutional demonstration site evaluated for rooftop rainwater harvesting and artificial aquifer recharge.',
         location: {
           latitude: 28.6139,
@@ -90,7 +90,7 @@ export const Dashboard: React.FC = () => {
         <div className="relative z-10 max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Smart India Hackathon Decision Support System</span>
+            <span>National Hydro Decision Support System</span>
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
@@ -115,7 +115,7 @@ export const Dashboard: React.FC = () => {
               className="flex items-center gap-2 bg-slate-800/90 hover:bg-slate-750 text-sky-300 hover:text-white px-5 py-2.5 rounded-xl font-semibold text-sm border border-slate-700 hover:border-sky-500/40 transition-all"
             >
               <Zap className="w-4 h-4 text-amber-400" />
-              <span>Load 1-Click SIH Demo Site</span>
+              <span>Load 1-Click Sample for Presentation</span>
             </button>
           </div>
         </div>
@@ -187,7 +187,7 @@ export const Dashboard: React.FC = () => {
               onClick={handleLaunchDemoScenario}
               className="text-sky-400 hover:underline text-xs font-semibold"
             >
-              Click here to load the sample SIH evaluation scenario
+              Click here to load the sample for presentation evaluation scenario
             </button>
           </div>
         ) : (

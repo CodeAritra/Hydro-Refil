@@ -28,7 +28,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="HydroRefil — RTRWH & Artificial Recharge Assessment API",
-    description="Engineered on-spot hydrological calculation and structure sizing platform for SIH.",
+    description="Engineered on-spot hydrological calculation and structure sizing platform.",
     version="1.0.0",
     lifespan=lifespan,
 )

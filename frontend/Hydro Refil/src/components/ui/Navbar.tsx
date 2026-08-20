@@ -27,7 +27,7 @@ export const Navbar: React.FC = () => {
                 Hydro<span className="text-sky-400">Refil</span>
               </span>
               <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20">
-                SIH Edition
+                Presentation Edition
               </span>
             </div>
             <p className="text-xs text-slate-400 leading-none">RTRWH & Recharge Sizing Platform</p>

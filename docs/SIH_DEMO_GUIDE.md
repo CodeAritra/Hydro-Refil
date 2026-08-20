@@ -13,7 +13,7 @@
 ---
 
 ## ⏱️ Minute 0:45 – 1:45: On-Spot Field Assessment & GIS Intelligence
-1. **Click "Start Assessment" or "Load 1-Click SIH Demo Site"**
+1. **Click "Start Assessment" or "Load 1-Click Sample for Presentation"**
 2. **Show the 6-Step Rapid Wizard:**
    - **Step 1 (Site):** Enter Building / Campus Name (e.g. *Kendriya Vidyalaya Campus*).
    - **Step 2 (Location / Map):**

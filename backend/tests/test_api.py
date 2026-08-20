@@ -81,7 +81,7 @@ def test_assessment_crud():
     with TestClient(app) as client:
         # 1. Create
         create_payload = {
-            "site_name": "SIH Demo Community Center",
+            "site_name": "Sample Presentation Community Center",
             "assessor_name": "Er. Vikram Sharma",
             "organization": "Central Ground Water Authority",
             "remarks": "On-spot field verification",
@@ -113,7 +113,7 @@ def test_assessment_crud():
         created_data = create_res.json()
         assessment_id = created_data["id"]
         assert assessment_id is not None
-        assert created_data["site_name"] == "SIH Demo Community Center"
+        assert created_data["site_name"] == "Sample Presentation Community Center"
         assert created_data["results"]["annual_net_harvestable_m3"] > 0
 
         # 2. Get Detail

@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-slate-200 font-semibold mb-3 flex items-center gap-1.5">
               <Award className="w-3.5 h-3.5 text-sky-400" />
-              SIH Hackathon Solution
+              HydroRefil Solution
             </h4>
             <p className="text-slate-400 mb-2">
               Problem: Rapid on-spot RTRWH & Artificial Recharge potential evaluation & sizing.
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-slate-800/80 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
-          <p>© {new Date().getFullYear()} HydroRefil Platform. Developed for Smart India Hackathon.</p>
+          <p>© {new Date().getFullYear()} HydroRefil Platform. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
