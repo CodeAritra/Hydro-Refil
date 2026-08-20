@@ -9,6 +9,7 @@ uvicorn[standard]==0.32.0
 # Database (async SQLite for dev, asyncpg for PostgreSQL in prod)
 sqlalchemy[asyncio]==2.0.36
 aiosqlite==0.20.0
+asyncpg==0.30.0
 
 # Data Validation
 pydantic==2.10.0
